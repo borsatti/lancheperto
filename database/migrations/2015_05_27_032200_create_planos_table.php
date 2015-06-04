@@ -15,8 +15,8 @@ class CreatePlanosTable extends Migration {
 		Schema::create('planos', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('nome', 100);
-			$table->string('titulo', 100);
+			$table->string('nome', 100)->index();
+			$table->string('titulo', 100)->index();
 			$table->text('descricao');
 			$table->decimal('valor', 5, 2);
 		});

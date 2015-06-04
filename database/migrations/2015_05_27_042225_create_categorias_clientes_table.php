@@ -15,11 +15,10 @@ class CreateCategoriasClientesTable extends Migration {
 		Schema::create('categorias_clientes', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('idCliente')->unsigned();
-			$table->foreign('idCliente')->references('id')->on('clientes')->onDelete('cascade');
-			$table->integer('idCategoria')->unsigned();
-			$table->foreign('idCategoria')->references('id')->on('categorias')->onDelete('cascade');
-			$table->timestamps();
+			$table->integer('id_cliente')->unsigned();
+			$table->foreign('id_cliente')->references('id')->on('clientes')->onDelete('cascade');
+			$table->integer('id_categoria')->unsigned();
+			$table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade');
 		});
 	}
 
@@ -30,7 +29,7 @@ class CreateCategoriasClientesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('categorias__clientes');
+		Schema::drop('categorias_clientes');
 	}
 
 }
